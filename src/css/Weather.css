@@ -7,25 +7,6 @@
   color: grey;
 }
 
-.searchBtn {
-  font-family: monospace;
-  box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
-  padding: 7px;
-  background-color: rgb(80, 80, 80);
-  border-style: none;
-  margin: 5px auto;
-  border-radius: 5px;
-  font-size: normal;
-  transition: 0.5s ease-in-out;
-  color: rgb(250, 247, 247);
-}
-
-.searchBtn:hover {
-  background-color: rgb(168, 222, 249);
-  color: black;
-  border-radius: 10px;
-}
-
 .Weather h1 {
   font-size: 50px;
   font-weight: 100;
@@ -68,22 +49,40 @@
   left: 0;
   border: 0;
 }
-
 form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Käytetään flexboxia elementtien asettelussa */
+  justify-content: center; /* Keskitetään elementit */
+  align-items: center; /* Keskitetään pysty suuntaan */
   margin: 20px 0;
 }
 
 input[type="text"] {
-  width: 200px;
-  margin-right: 10px;
-  /*  transition: width 0.3s ease; /* Animaatio leveydelle */
+  width: 200px; /* Syöttökentän leveys */
+  margin-right: 10px; /* Väli nappiin */
+  transition: width 0.3s ease; /* Animaatio leveydelle */
 }
 
 input[type="text"]:focus {
-  width: 200px; /* Muuta leveys kun kenttä on aktiivinen */
+  width: 250px; /* Muuta leveys kun kenttä on aktiivinen */
+}
+
+.searchBtn {
+  font-family: monospace;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
+  padding: 7px;
+  background-color: rgb(80, 80, 80);
+  border-style: none;
+  margin: 5px auto;
+  border-radius: 5px;
+  font-size: normal;
+  transition: 0.5s ease-in-out;
+  color: rgb(250, 247, 247);
+}
+
+.searchBtn:hover {
+  background-color: rgb(168, 222, 249);
+  color: black;
+  border-radius: 10px;
 }
 
 .WeatherInfo {
