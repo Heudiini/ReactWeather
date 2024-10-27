@@ -16,22 +16,20 @@ export default function Weather(props) {
 
   const weatherOpinions = {
     Clear: "Wow, blue skies! Let's go out!",
-    Clouds:
-      "Few clouds, It's a great day to spend time outside! ..or at least good enough don't you agree?",
-    Mist: "Mist, in mysterious mist we go out.. ",
-    Smoke: "Smoke in the air, not obligation to go out",
-    Haze: "Contrasts are best when It's a bit blurry? or was it opposite...",
-    Dust: "Openweather data says it's dusty, did you see any dust, or we stay inside?",
-    Fog: "Fog, you could imagine yourself in London, unless you're already there ....",
-    Sand: "Opendata informs about Sand? Is it even safe to go outside?",
-    Ash: "It's Ashy weather according to opendata weather... well..",
-    Squal: "It's Squaly weather? What does that even mean? ",
-    Tornado:
-      "Tornado, why would you even ask if you should go outside. I can't see the tornado tho.. ",
-    Snow: "Imagine if you were in Lapland with all other reindeers..",
-    Rain: "Even snow would be better, who likes rain.. ",
-    Drizzle: "This is way more serious than normal rain..",
-    Thunderstorm: "Do I have to agree staying inside..  ?",
+    Clouds: "Few clouds, It's a great day to spend time outside!",
+    Mist: "Mist, in mysterious mist we go out.",
+    Smoke: "Smoke in the air, not an obligation to go out.",
+    Haze: "Contrasts are best when it's a bit blurry.",
+    Dust: "OpenWeather data says it's dusty, did you see any dust?",
+    Fog: "Fog, you could imagine yourself in London.",
+    Sand: "Open data informs about sand. Is it even safe to go outside?",
+    Ash: "It's ashy weather according to OpenWeather data.",
+    Squal: "It's squalid weather? What does that even mean?",
+    Tornado: "Tornado, why would you even ask if you should go outside?",
+    Snow: "Imagine if you were in Lapland with all other reindeers.",
+    Rain: "Even snow would be better, who likes rain?",
+    Drizzle: "This is way more serious than normal rain.",
+    Thunderstorm: "Do I have to agree to stay inside?",
   };
 
   const imageMapping = {
@@ -85,19 +83,17 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="row Weather">
-        <form onSubmit={handleSubmit} className="row form-inline">
+        <form onSubmit={handleSubmit} className="form-inline">
           <input
-            className="form-control form-control-sm"
+            className="form-control form-control-sm w-50"
             type="text"
             placeholder="Your Town?"
-            autoFocus={false}
             onChange={handleCityChange}
             aria-label="Search"
-            style={{ width: "200px" }} // Kiinteä leveys
           />
-          <span>
-            <input type="submit" value="Search" className="searchBtn" />
-          </span>
+          <button type="submit" className="searchBtn">
+            Search
+          </button>
         </form>
         <div className="col-lg-8">
           <div className="row">
