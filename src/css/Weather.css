@@ -5,8 +5,8 @@
   padding: 30px;
   border-radius: 15px;
   color: grey;
+  margin-top: 100px;
 }
-
 .Weather h1 {
   font-size: 50px;
   font-weight: 100;
@@ -50,33 +50,48 @@
   border: 0;
 }
 form {
-  display: flex; /* Käytetään flexboxia elementtien asettelussa */
-  justify-content: center; /* Keskitetään elementit */
-  align-items: center; /* Keskitetään pysty suuntaan */
-  margin: 20px 0;
+  display: flex; /* Rinnakkain asettelu */
+  justify-content: center; /* Keskittää elementit vaakasuunnassa */
+  align-items: center; /* Keskittää elementit pystysuunnassa */
+  margin-top: 130px; /* Säädä ylös suuntautuvaa marginaalia */
 }
 
 input[type="text"] {
-  width: 200px; /* Syöttökentän leveys */
+  flex-grow: 1; /* Anna syöttökentän kasvaa, jotta se vie koko tilan */
   margin-right: 10px; /* Väli nappiin */
-  transition: width 0.3s ease; /* Animaatio leveydelle */
-}
-
-input[type="text"]:focus {
-  width: 250px; /* Muuta leveys kun kenttä on aktiivinen */
+  padding: 7px; /* Lisää sisätilaa kenttään */
+  border-radius: 5px; /* Lisää kulmista pyöreät */
+  border: 1px solid #ccc; /* Rajoita syöttökenttä */
 }
 
 .searchBtn {
   font-family: monospace;
   box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
-  padding: 7px;
+  padding: 7px 15px; /* Lisää leveyttä nappiin */
   background-color: rgb(80, 80, 80);
   border-style: none;
-  margin: 5px auto;
   border-radius: 5px;
   font-size: normal;
   transition: 0.5s ease-in-out;
   color: rgb(250, 247, 247);
+}
+
+/* Responsiiviset tyylit */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column; /* Muuta pystysuuntaiseksi mobiilissa */
+    align-items: stretch; /* Ota koko leveys */
+  }
+
+  input[type="text"] {
+    width: 100%; /* Syöttökenttä vie koko leveys mobiilissa */
+    margin-right: 0; /* Poista väli */
+    margin-bottom: 10px; /* Lisää alaväli */
+  }
+
+  .searchBtn {
+    width: 100%; /* Nappi vie koko leveys mobiilissa */
+  }
 }
 
 .searchBtn:hover {
