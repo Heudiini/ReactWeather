@@ -79,11 +79,11 @@ form {
 input[type="text"] {
   width: 200px;
   margin-right: 10px;
-  transition: width 0.3s ease; /* Animaatio leveydelle */
+  /*  transition: width 0.3s ease; /* Animaatio leveydelle */
 }
 
 input[type="text"]:focus {
-  width: 250px; /* Muuta leveys kun kenttä on aktiivinen */
+  width: 200px; /* Muuta leveys kun kenttä on aktiivinen */
 }
 
 .WeatherInfo {
