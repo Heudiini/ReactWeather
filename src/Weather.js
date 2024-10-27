@@ -85,7 +85,7 @@ export default function Weather(props) {
       <div className="row Weather">
         <form onSubmit={handleSubmit} className="form-inline">
           <input
-            className="form-control form-control-sm w-50"
+            className="form-control form-control-sm"
             type="text"
             placeholder="Your Town?"
             onChange={handleCityChange}

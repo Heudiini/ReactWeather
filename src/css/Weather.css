@@ -50,30 +50,28 @@
   border: 0;
 }
 form {
-  display: flex; /* Rinnakkain asettelu */
-  justify-content: center; /* Keskittää elementit vaakasuunnassa */
-  align-items: center; /* Keskittää elementit pystysuunnassa */
-  margin-top: 130px; /* Säädä ylös suuntautuvaa marginaalia */
+  display: flex; /* Käytä flexboxia elementtien asetteluun */
+  flex-direction: column; /* Aseta elementit pystysuuntaan */
+  align-items: center; /* Keskittää elementit vaakasuunnassa */
+  margin-top: 20px; /* Voit säätää marginaalia tarpeen mukaan */
 }
 
 input[type="text"] {
-  flex-grow: 1; /* Anna syöttökentän kasvaa, jotta se vie koko tilan */
-  margin-right: 10px; /* Väli nappiin */
-  padding: 7px; /* Lisää sisätilaa kenttään */
-  border-radius: 5px; /* Lisää kulmista pyöreät */
-  border: 1px solid #ccc; /* Rajoita syöttökenttä */
+  width: 200px; /* Muokkaa tätä tarpeen mukaan */
+  padding: 7px; /* Lisää paddingia, jotta syöttökenttä näyttää paremmalta */
+  border-radius: 5px; /* Tee kulmista pyöreämmät */
+  border: 1px solid #ccc; /* Lisää rajaviiva syöttökenttään */
 }
 
 .searchBtn {
-  font-family: monospace;
-  box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
-  padding: 7px 15px; /* Lisää leveyttä nappiin */
+  width: 200px; /* Aseta sama leveys kuin syöttökentällä */
+  padding: 7px; /* Lisää paddingia, jotta nappi näyttää hyvältä */
   background-color: rgb(80, 80, 80);
-  border-style: none;
-  border-radius: 5px;
-  font-size: normal;
-  transition: 0.5s ease-in-out;
+  border: none; /* Poista oletusreunus */
+  border-radius: 5px; /* Tee kulmista pyöreämmät */
   color: rgb(250, 247, 247);
+  transition: background-color 0.5s ease-in-out; /* Animaatio taustavärille */
+  margin-top: 10px; /* Lisää väli syöttökentän ja napin väliin */
 }
 
 /* Responsiiviset tyylit */
