@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
@@ -17,12 +16,17 @@ export default function WeatherForecast(props) {
   }
 
   function load() {
-    let apiKey = "cf35cd803ef0202f5f034abcff722764";
+    let apiKey = "cf35cd803ef0202f5f034abcff722764"; // uusi API-avain
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`; // Oikea URL
 
-    axios.get(apiUrl).then(handleResponse);
+    axios
+      .get(apiUrl)
+      .then(handleResponse)
+      .catch(() => {
+        setLoaded(false); // Asetetaan loaded false, jos virhe
+      });
   }
 
   if (loaded) {
@@ -45,7 +49,11 @@ export default function WeatherForecast(props) {
     );
   } else {
     load();
-
-    return null;
+    return (
+      <p>
+        Ei säätietoja saatavilla. Palaa huomenna yrittämään viiden päivän
+        ennustetta!
+      </p>
+    ); // Ystävällinen viesti
   }
 }
