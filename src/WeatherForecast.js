@@ -16,18 +16,25 @@ export default function WeatherForecast(props) {
   }
 
   function load() {
-    let apiKey = "cf35cd803ef0202f5f034abcff722764"; // uusi API-avain
+    let apiKey = "cf35cd803ef0202f5f034abcff722764"; // New API key
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`; // Oikea URL
+    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`; // Correct URL
 
     axios
       .get(apiUrl)
       .then(handleResponse)
       .catch(() => {
-        setLoaded(false); // Asetetaan loaded false, jos virhe
+        setLoaded(false); // Set loaded to false if there's an error
       });
   }
+
+  // Adding a usage limit check to prevent excessive API calls
+  useEffect(() => {
+    if (!loaded) {
+      load();
+    }
+  }, [loaded]);
 
   if (loaded) {
     return (
@@ -48,12 +55,11 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    load();
     return (
       <p>
-        Ei säätietoja saatavilla. Palaa huomenna yrittämään viiden päivän
-        ennustetta!
-      </p>
-    ); // Ystävällinen viesti
+        No weather data available. Please check back tomorrow for the five-day
+        forecast!
+      </p> // Friendly message
+    );
   }
 }
